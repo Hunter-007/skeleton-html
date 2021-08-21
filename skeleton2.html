@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> For the Odin Project Taks</title>
+    </head>
+    <body>
+        <p> This is a skeleton html page for practising JavaScript</p>
+
+        <script>
+    function computerP(){
+    let options = ['Rock','Paper','Scissors'];
+    const results = options[Math.floor(3*Math.random())];
+    return results
+}
+
+let playerChoice = prompt("Enter either one of rock,paper or scissors: ");
+
+if(playerChoice == computerP()){
+    alert("It is a tie");
+} else if(playerChoice == "Paper" && computerP()=="Rock"){
+    alert("You win! Paper covers Rock");
+} else if(playerChoice == "Paper" && computerP()=="Scissors"){
+    alert("You Lose! Scissors cuts Paper");
+} else if(playerChoice == "Rock" && computerP()=="Scissors"){
+    alert("You win! Rock blunts Scissors");
+} else if(playerChoice == "Rock" && computerP()=="Paper"){
+    alert("You lose! Paper covers Rock");
+}else if(playerChoice == "Scissors" && computerP()=="Paper"){
+    alert("You win! Scissors cuts Paper");
+}else if(playerChoice == "Scissors" && computerP()=="Rock"){
+    alert("You lose! Rock blunts Scissors");
+}
+
+        </script>
+    </body>
+</html>
