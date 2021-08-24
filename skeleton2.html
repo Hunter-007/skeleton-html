@@ -7,29 +7,42 @@
         <p> This is a skeleton html page for practising JavaScript</p>
 
         <script>
-    function computerP(){
-    let options = ['Rock','Paper','Scissors'];
+    function computerPlay(){
+    const options = ['rock','paper','scissors'];
     const results = options[Math.floor(3*Math.random())];
     return results
 }
+const computerSelection = computerPlay();
+const playerSelection = prompt("Enter any one of rock,paper or scissors: ").toLowerCase();
 
-let playerChoice = prompt("Enter either one of rock,paper or scissors: ");
-
-if(playerChoice == computerP()){
-    alert("It is a tie");
-} else if(playerChoice == "Paper" && computerP()=="Rock"){
-    alert("You win! Paper covers Rock");
-} else if(playerChoice == "Paper" && computerP()=="Scissors"){
-    alert("You Lose! Scissors cuts Paper");
-} else if(playerChoice == "Rock" && computerP()=="Scissors"){
-    alert("You win! Rock blunts Scissors");
-} else if(playerChoice == "Rock" && computerP()=="Paper"){
-    alert("You lose! Paper covers Rock");
-}else if(playerChoice == "Scissors" && computerP()=="Paper"){
-    alert("You win! Scissors cuts Paper");
-}else if(playerChoice == "Scissors" && computerP()=="Rock"){
-    alert("You lose! Rock blunts Scissors");
+function gamePlay(playerSelection, computerSelection){
+    if(playerSelection === computerSelection){
+    return("It is a tie");
+} else if(playerSelection === "paper" && computerSelection==="rock"){
+    return("You win! Paper covers Rock");
+} else if(playerSelection === "paper" && computerSelection==="scissors"){
+    return("You Lose! Scissors cuts Paper");
+} else if(playerSelection === "rock" && computerSelection==="scissors"){
+    return("You win! Rock blunts Scissors");
+} else if(playerSelection === "rock" && computerSelection==="paper"){
+    return("You lose! Paper covers Rock");
+}else if(playerSelection === "scissors" && computerSelection==="paper"){
+    return("You win! Scissors cuts Paper");
+}else if(playerSelection === "scissors" && computerSelection==="rock"){
+    return("You lose! Rock blunts Scissors");
 }
+}
+function game(){
+    let totalGame = 0;
+    while (totalGame < 5) {
+        console.log(gamePlay(playerSelection,computerSelection));
+        totalGame++;
+    }
+    
+}
+    
+
+
 
         </script>
     </body>
